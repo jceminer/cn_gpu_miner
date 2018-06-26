@@ -6,7 +6,7 @@ BitcoinTalk Topic: https://bitcointalk.org/index.php?topic=3281187.0
 :heavy_exclamation_mark: Security Alert! Some hackers pack a Trojan in a fake JCE release, complete with the doc. :heavy_exclamation_mark: That's usually a small .rar when official JCE are big .zip\
 Download JCE only from this Github page.
 
-Will be released soon: The GPU version, which still offers the CPU mode, plus a OpenCL GPU mode.\
+Here's the GPU prototype version, which still offers the CPU mode, plus a OpenCL GPU mode.\
 While targetting AMD cards, it may work on nVidia too, i cannot test since I own zero nVidia card. To be tested.
 
 # Index
@@ -15,7 +15,7 @@ While targetting AMD cards, it may work on nVidia too, i cannot test since I own
 
 ## Configuration
 
-The prototype to be released will have no GPU autoconfig, and so the --auto parameter will configure the same CPU threads than the CPU version, and no GPU threads.\
+The prototype has no GPU autoconfig, and so the --auto parameter will configure the same CPU threads than the CPU version, and no GPU threads.\
 GPU autoconfig will come later. The GPU can be enabled with manual config, here's an example:
 
 ```
@@ -69,7 +69,7 @@ Two threads to use the double-mem mode, but the little 1GB VRAM doesn't allow to
 
 * HD7870 (Pitcairn 2GB)
 ```
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 128, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":240 },
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 128, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":240 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 128, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":464 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 128, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":464 },
 ```
 Twice the same to use the double-mem mode.
