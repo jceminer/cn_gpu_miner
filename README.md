@@ -50,9 +50,9 @@ This is a real-life example from my pretty *exotic and old* rig:
 
 *multi_hash* : often called intensity by other miners. Claymore parameter for it was -h. Like for CPU, that's the number of hashes computed at the same time. While CPUs go from 1 to 6, GPUs go much higher. Often the higher the faster, but not that simple. Must be a multiple of 16.
 
-### Best known configuration
+### Best known configurations
 
-* HD7950 (Tahiti 3GB and more)
+* HD7950 (Tahiti 3GB and more) Cryptonight v7
 ```
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":464 },
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":464 },
@@ -60,16 +60,23 @@ This is a real-life example from my pretty *exotic and old* rig:
 Twice the same to use the double-mem mode.
 
 
-* HD7790 (Bonaire 1GB)
+* HD7790 (Bonaire 1GB) Cryptonight v7
 ```
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":208 },
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":224 },
 ```
 Two threads to use the double-mem mode, but the little 1GB VRAM doesn't allow to use 224+224 so I use 208+224.
 
-* HD7870 (Pitcairn 2GB)
+* HD7870 (Pitcairn 2GB) Cryptonight v7
 ```
 { "mode" : "GPU", "worksize" : 8, "alpha" : 128, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":464 },
 { "mode" : "GPU", "worksize" : 8, "alpha" : 128, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":464 },
 ```
 Twice the same to use the double-mem mode.
+
+* RX560 (Baffin 2GB) Cryptonight v7
+```
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 128, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":464 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 128, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":464 },
+```
+Twice the same to use the double-mem mode. If a screen is plugged in the card, you may need to lower to 448 or 432
