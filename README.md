@@ -102,6 +102,13 @@ Twice the same to use the double-mem mode.
 ```
 Twice the same to use the double-mem mode. If a screen is plugged in the card, you may need to lower to 448 or 432
 
+* RX570 8G Cryptonight v7
+```
+{ "mode": "GPU", "worksize": 4, "alpha": 128, "beta": 8, "gamma": 4, "delta": 4, "epsilon": 4, "zeta": 4, "index": ..., "multi_hash": 1008 },
+{ "mode": "GPU", "worksize": 4, "alpha": 128, "beta": 8, "gamma": 4, "delta": 4, "epsilon": 4, "zeta": 4, "index": ..., "multi_hash": 1008 },
+```
+Twice the same to use the double-mem mode. If a screen is plugged in the card, you may need to lower to 448 or 432
+
 * RX580 4G Cryptonight v7
 ```
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta" : 4, "index" : ..., "multi_hash": 944},
