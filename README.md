@@ -13,6 +13,7 @@ While targetting AMD cards, it may work on nVidia too, i cannot test since I own
 
 * [Speed](#speed)
 * [Warming-up](#warming-up)
+* [Fees](#fees)
 * [Configuration](#configuration)
 
 ## Speed
@@ -33,6 +34,15 @@ However, accoring to the first feedbacks, here's the status:
 
 JCE lets the OpenCL driver allocate computing power progressively, and does not push the card at max immediately.\
 **It starts at ~80% speed and grows up to 100% in about 5 minutes.** So let the miner warm up before comparing its speed to other miners.
+
+## Fees
+
+Current fees are:
+* 0.9% on the GPUs
+* 1.5% on the AES CPUs
+* 3.0% on the non-AES CPUs
+
+If you mix CPU and GPU, fees are adjusted proportionally.
 
 ## Configuration
 
