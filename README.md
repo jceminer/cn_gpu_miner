@@ -14,7 +14,9 @@ While targetting AMD cards, it may work on nVidia too, i cannot test since I own
 * [Speed](#speed)
 * [Warming-up](#warming-up)
 * [Fees](#fees)
+* [Planned features](#planned-features)
 * [Configuration](#configuration)
+* [Troubleshooting](#troubleshooting)
 
 ## Speed
 
@@ -43,6 +45,18 @@ Current fees are:
 * 3.0% on the non-AES CPUs
 
 If you mix CPU and GPU, fees are adjusted proportionally.
+
+## Planned features
+
+JCE GPU is still in very early stage. Here are the planned features to be added:
+* GPU auto-config
+* Separate per-GPU pools and coins (to let the CPU and each GPU mine its own coin if desired)
+* Temperature and fan speed monitoring
+* Per-GPU pause
+* Decent performance in Heavy/Haven
+* Bittube-v2 fork support
+* APU support
+* Faster and/or cached OpenCL compile
 
 ## Configuration
 
@@ -98,10 +112,10 @@ Twice the same to use the double-mem mode.
 ```
 Two threads to use the double-mem mode, but the little 1GB VRAM doesn't allow to use 224+224 so I use 208+224.
 
-* HD7870 (Pitcairn 2GB) Cryptonight v7
+* HD7870 or HD7850 (Pitcairn 2GB) Cryptonight v7
 ```
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 128, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":464 },
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 128, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":464 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":464 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":464 },
 ```
 Twice the same to use the double-mem mode.
 
@@ -155,4 +169,32 @@ Twice the same to use the double-mem mode.
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 16, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta" : 4, "index" : ..., "multi_hash":1920 },
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 16, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta" : 4, "index" : ..., "multi_hash":1920 },
 ```
+or, alternative
+```
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta" : 4, "index" : ..., "multi_hash":1936 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta" : 4, "index" : ..., "multi_hash":1936 },
+```
 Twice the same to use the double-mem mode.
+
+## Troubleshooting
+
+#### Q. My GPU is not even recognized
+If it's an APU or a nVidia card, they are not supported yet.
+
+#### Q. The OpenCL compilation fails
+nVidia OpenCL driver and cards older than the HD7000 may cause such an error. They are not supported yet.
+
+#### Q. My hashrate is zero or almost zero
+Lower the parameters, and focus first on the multi_hash.
+
+#### Q. My hashrate starts good then drops to zero or almost zero
+Lower the parameters, focus first on the multi_hash, or unplug any screen (real or virtual) from the card.
+
+#### Q. My hashrate is a lot lower than other miner X
+The performance difference between JCE and other miners, may it be positive or negative, is rarely more than ~10%, and often closer to 5%. A huge difference is caused by a bad configuration. And a good configuration on miner X may be bad on JCE, and vice-versa.\
+A notable exception is JCE against Claymore on 512M and 1G cards, where Claymore is an order of magnitude faster. JCE has been developped in 2018 and badly support old low-memory cards. But on 2G+ cards JCE is often faster.\
+And again, keep in mind that JCE speed grows progressively from ~80% to 100% for 5min, so wait a bit before concluding JCE is slower.
+
+#### Q. My pool reports a hashrate lower than the one displayed
+First, press R to get JCE report about effective hashrate. If it's lower, that's just because of back luck, mining is a random game. If it's close to the theorical value, the loss should be about 2%, 0.9% for fees and ~1% of stale shares. If you observe a huge difference between JCE reported effective hashrate and the pool hashrate, so the pool may be cheating you.\
+Nicehash, which have a specific network protocol, tend to refuse a lot more stale shares than other pools, leading to a lower effective hashrate. In doubt, please test on a normal and reliable pool: a non-free non-marketplace pool with a normal difficulty level.
