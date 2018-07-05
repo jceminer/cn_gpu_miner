@@ -9,8 +9,6 @@ Download JCE only from this Github page.
 Here's the GPU prototype version, which still offers the CPU mode, plus a OpenCL GPU mode.\
 While targetting AMD cards, it may work on nVidia too, i cannot test since I own zero nVidia card. To be tested.
 
-### Netcode Regression reported on 0.30b, with lots of "duplicate shares". A fix will come soon. CPU-only version not affected.
-
 # Index
 
 * [Speed](#speed)
