@@ -22,7 +22,7 @@ While targetting AMD cards, it may work on nVidia too, i cannot test since I own
 
 It's hard to compare GPU Miners. There are a lot of external parameters: the card itself, its memory, the biosmod, the drivers, the overclocking, the Power Limit...
 
-However, accoring to the first feedbacks, here's the status:
+However, according to the first feedbacks, here's the status:
 
 * JCE is faster than any other miner on small RX cards (RX550 and RX560). They are my favorite cards, and the ones I use on mosyt of my rigs.
 * JCE is always faster than the Wolf0-based miners (Stak, Xmrig, Gateless...). This is not fair since I can read their code and they cannot read mine, but it's a proof JCE is not a copy-paste of their code.
@@ -31,6 +31,8 @@ However, accoring to the first feedbacks, here's the status:
 * JCE is disapointing on CN-Heavy, but that's the code I optimized the less so far.
 * I got mixed results on HD7800. I measured higher hashrate than other miners on my rig, but got opposite comments from some users. To be tested.
 * JCE is bad on small 1G cards compared to the legendary Claymore 9.7, but this miner is no longer supported.
+
+The CPU part of JCE-GPU is the exact same than the CPU-only version.
 
 ## Warming-up
 
@@ -49,19 +51,26 @@ If you mix CPU and GPU, fees are adjusted proportionally.
 ## Planned features
 
 JCE GPU is still in very early stage. Here are the planned features to be added:
-* GPU auto-config
+* GPU auto-config _Done!_
 * Separate per-GPU pools and coins (to let the CPU and each GPU mine its own coin if desired)
 * Temperature and fan speed monitoring
-* Per-GPU pause
+* Per-GPU pause _Done!_
 * Decent performance in Heavy/Haven
-* Bittube-v2 fork support
+* Bittube-v2 fork support _Done!_
 * APU support
 * Faster and/or cached OpenCL compile
 
 ## Configuration
 
-**The prototype has no GPU autoconfig**, and so the --auto parameter will configure the same CPU threads than the CPU version, and no GPU threads.\
-GPU autoconfig will come later. **The GPU can be enabled with manual config**, here's an example:
+JCE provides an auto-config, with parameters:
+* **--no-gpu --auto** to autoconfigure CPUs and no GPU
+* **--no-cpu --auto** to autoconfigure GPUs and no CPU
+* **--auto** to autoconfigure all capable GPUs and CPUs
+
+If you need manual config, then all relies on the configuration file. You cannot configure CPU automatically and GPU manually, or vice-versa.\
+The auto GPU config aims for safety and will probably be a decent but suboptimal configuration for your GPUs.
+
+Here's an example of a complete config with CPUs and GPUs:
 
 ```
 "cpu_threads_conf" : 
@@ -131,7 +140,7 @@ Twice the same to use the double-mem mode. If a screen is plugged in the card, y
 { "mode": "GPU", "worksize": 4, "alpha": 128, "beta": 8, "gamma": 4, "delta": 4, "epsilon": 4, "zeta": 4, "index": ..., "multi_hash": 1008 },
 { "mode": "GPU", "worksize": 4, "alpha": 128, "beta": 8, "gamma": 4, "delta": 4, "epsilon": 4, "zeta": 4, "index": ..., "multi_hash": 1008 },
 ```
-Twice the same to use the double-mem mode. If a screen is plugged in the card, you may need to lower to 448 or 432
+Twice the same to use the double-mem mode.
 
 * RX580 4G Cryptonight v7
 ```
