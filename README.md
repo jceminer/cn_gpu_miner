@@ -6,17 +6,25 @@ BitcoinTalk Topic: https://bitcointalk.org/index.php?topic=3281187.0
 :heavy_exclamation_mark: Security Alert! Some hackers pack a Trojan in a fake JCE release, complete with the doc. :heavy_exclamation_mark: That's usually a small .rar when official JCE are big .zip\
 Download JCE only from this Github page.
 
-Here's the GPU prototype version, which still offers the CPU mode, plus a OpenCL GPU mode.\
-While targetting AMD cards, it may work on nVidia too, i cannot test since I own zero nVidia card. To be tested.
+Here's the GPU prototype version, which still offers the CPU mode, plus a OpenCL GPU mode.
 
 # Index
 
+* [Limitations](#limitations)
 * [Speed](#speed)
 * [Warming-up](#warming-up)
 * [Fees](#fees)
 * [Planned features](#planned-features)
 * [Configuration](#configuration)
 * [Troubleshooting](#troubleshooting)
+
+## Limitations
+
+* Minimum system is Windows 8.1 x64, Windows 7 is not supported.
+* No 32-bits version yet
+* No Linux version (possible but unlikely)
+* No support of Intel/nVidia GPU yet
+* APU (even AMD ones) were reported to cause problems
 
 ## Speed
 
@@ -58,7 +66,7 @@ JCE GPU is still in very early stage. Here are the planned features to be added:
 * Decent performance in Heavy/Haven
 * Bittube-v2 fork support _Done!_
 * APU support
-* Faster and/or cached OpenCL compile
+* Faster and/or cached OpenCL compile _Done!_
 
 ## Configuration
 
@@ -188,7 +196,8 @@ Twice the same to use the double-mem mode.
 ## Troubleshooting
 
 #### Q. My GPU is not even recognized
-If it's an APU or a nVidia card, they are not supported yet.
+If it's an APU or a nVidia card, they are not supported yet.\
+On Windows 7 you will probably have no GPU detected at all. Windows 7 is not supported.
 
 #### Q. The OpenCL compilation fails
 nVidia OpenCL driver and cards older than the HD7000 may cause such an error. They are not supported yet.
