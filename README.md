@@ -20,7 +20,7 @@ Here's the GPU prototype version, which still offers the CPU mode, plus a OpenCL
 
 ## Limitations
 
-* Minimum system is Windows 8.1 x64, Windows 7 is not supported.
+* Minimum system is Windows 8.1 x64, **Windows 7 is not supported**.
 * No 32-bits version yet
 * No Linux version (possible but unlikely)
 * No support of Intel/nVidia GPU yet
