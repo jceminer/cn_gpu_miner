@@ -61,7 +61,8 @@ If you mix CPU and GPU, fees are adjusted proportionally.
 JCE GPU is still in very early stage. Here are the planned features to be added:
 * GPU auto-config _Done!_
 * Separate per-GPU pools and coins (to let the CPU and each GPU mine its own coin if desired)
-* Temperature and fan speed monitoring
+* Temperature and fan speed monitoring _Done!_
+* Watchdog
 * Per-GPU pause _Done!_
 * Decent performance in Heavy/Haven
 * Bittube-v2 fork support _Done!_
