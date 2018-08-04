@@ -8,6 +8,9 @@ Download JCE only from this Github page.
 
 Here's the GPU prototype version, which still offers the CPU mode, plus a OpenCL GPU mode.
 
+The GPU version being a superset of the CPU version, what applies to JCE CPU also applies to JCE GPU, notably the netcode, the forks or the security concerns, **please take a look at the main documentation here**
+https://github.com/jceminer/cn_cpu_miner
+
 # Index
 
 * [Limitations](#limitations)
