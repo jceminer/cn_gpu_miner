@@ -6,7 +6,7 @@ BitcoinTalk Topic: https://bitcointalk.org/index.php?topic=3281187.0
 :heavy_exclamation_mark: Security Alert! Some hackers pack a Trojan in a fake JCE release, complete with the doc. :heavy_exclamation_mark: That's usually a small .rar when official JCE are big .zip\
 Download JCE only from this Github page.
 
-Here's the GPU prototype version, which still offers the CPU mode, plus a OpenCL GPU mode.
+Here's the GPU prototype version, which still offers the CPU mode, plus an OpenCL GPU mode.
 
 The GPU version being a superset of the CPU version, what applies to JCE CPU also applies to JCE GPU, notably the netcode, the forks or the security concerns, **please take a look at the main documentation here**
 https://github.com/jceminer/cn_cpu_miner
@@ -35,11 +35,11 @@ It's hard to compare GPU Miners. There are a lot of external parameters: the car
 
 However, according to the first feedbacks, here's the status:
 
-* JCE is faster than any other miner on small RX cards (RX550 and RX560). They are my favorite cards, and the ones I use on mosyt of my rigs.
+* JCE is faster than any other miner on small RX cards (RX550 and RX560). They are my favorite cards, and the ones I use on most of my rigs.
 * JCE is always faster than the Wolf0-based miners (Stak, Xmrig, Gateless...). This is not fair since I can read their code and they cannot read mine, but it's a proof JCE is not a copy-paste of their code.
 * JCE is surprisingly fast on Vega, reaching 2050+ on Vega 64 on CN-v7.
-* JCE is close to SRB and Claymore otherwise, sometimes slightly above, sometime slighty below.
-* JCE is disapointing on CN-Heavy, but that's the code I optimized the less so far.
+* JCE is close to SRB and Claymore otherwise, sometimes slightly above, sometimes slightly below.
+* JCE is disappointing on CN-Heavy, but that's the code I optimized the less so far.
 * I got mixed results on HD7800. I measured higher hashrate than other miners on my rig, but got opposite comments from some users. To be tested.
 * JCE is bad on small 1G cards compared to the legendary Claymore 9.7, but this miner is no longer supported.
 
@@ -79,7 +79,7 @@ JCE provides an auto-config, with parameters:
 * **--no-cpu --auto** to autoconfigure GPUs and no CPU
 * **--auto** to autoconfigure all capable GPUs and CPUs
 
-If you need manual config, then all relies on the configuration file. You cannot configure CPU automatically and GPU manually, or vice-versa.\
+If you need manual config, then all rely on the configuration file. You cannot configure CPU automatically and GPU manually, or vice-versa.\
 The auto GPU config aims for safety and will probably be a decent but suboptimal configuration for your GPUs.
 
 Here's an example of a complete config with CPUs and GPUs:
@@ -108,13 +108,13 @@ This is a real-life example from my pretty *exotic and old* rig:
 
 *mode* : can be GPU and APU, but APU is not available yet, so keep GPU
 
-*worksize* : exact same meaning than in other miners, that's the OpenCL parralelism level
+*worksize* : exact same meaning than in other miners, that's the OpenCL parallelism level
 
 *the greeks* : minor tuning values, in order of importance. Good values for alpha are 32, 64 or 128, and for beta 8 or 16. Other values will probably have no real impact, keep 8 or 4.
 
-*index* : the GPU number. Run JCE with parameter --probe to get the list. It's in native OpenCL order, and GPU 0 is not always the main boot GPU.
+*index* : the GPU number. Run JCE with parameter `--probe` to get the list. It's in native OpenCL order, and GPU 0 is not always the main boot GPU.
 
-*multi_hash* : often called intensity by other miners. Claymore parameter for it was -h. Like for CPU, that's the number of hashes computed at the same time. While CPUs go from 1 to 6, GPUs go much higher. Often the higher the faster, but not that simple. Must be a multiple of 16.
+*multi_hash* : often called intensity by other miners. Claymore parameter for it was `-h`. Like for CPU, that's the number of hashes computed at the same time. While CPUs go from 1 to 6, GPUs go much higher. Often the higher the faster, but not that simple. Must be a multiple of 16.
 
 ### Best known configurations
 
@@ -214,9 +214,9 @@ Lower the parameters, focus first on the multi_hash, or unplug any screen (real 
 
 #### Q. My hashrate is a lot lower than other miner X
 The performance difference between JCE and other miners, may it be positive or negative, is rarely more than ~10%, and often closer to 5%. A huge difference is caused by a bad configuration. And a good configuration on miner X may be bad on JCE, and vice-versa.\
-A notable exception is JCE against Claymore on 512M and 1G cards, where Claymore is an order of magnitude faster. JCE has been developped in 2018 and badly support old low-memory cards. But on 2G+ cards JCE is often faster.\
+A notable exception is JCE against Claymore on 512M and 1G cards, where Claymore is an order of magnitude faster. JCE has been developed in 2018 and badly support old low-memory cards. But on 2G+ cards JCE is often faster.\
 And again, keep in mind that JCE speed grows progressively from ~80% to 100% for 5min, so wait a bit before concluding JCE is slower.
 
 #### Q. My pool reports a hashrate lower than the one displayed
-First, press R to get JCE report about effective hashrate. If it's lower, that's just because of back luck, mining is a random game. If it's close to the theorical value, the loss should be about 2%, 0.9% for fees and ~1% of stale shares. If you observe a huge difference between JCE reported effective hashrate and the pool hashrate, so the pool may be cheating you.\
+First, press R to get JCE report about effective hashrate. If it's lower, that's just because of back luck, mining is a random game. If it's close to the theoretical value, the loss should be about 2%, 0.9% for fees and ~1% of stale shares. If you observe a huge difference between JCE reported effective hashrate and the pool hashrate, so the pool may be cheating you.\
 Nicehash, which have a specific network protocol, tend to refuse a lot more stale shares than other pools, leading to a lower effective hashrate. In doubt, please test on a normal and reliable pool: a non-free non-marketplace pool with a normal difficulty level.
