@@ -15,6 +15,7 @@ https://github.com/jceminer/cn_cpu_miner
 
 * [Limitations](#limitations)
 * [Speed](#speed)
+* [Drivers](#drivers)
 * [Warming-up](#warming-up)
 * [Fees](#fees)
 * [Planned features](#planned-features)
@@ -45,6 +46,12 @@ However, according to the first feedbacks, here's the status:
 
 The CPU part of JCE-GPU is the exact same than the CPU-only version.
 
+## Drivers
+
+Recommended drivers:
+* 15.12 for HD6xxx and HD79xx
+* 18.6.1 otherwise
+
 ## Warming-up
 
 JCE lets the OpenCL driver allocate computing power progressively, and does not push the card at max immediately.\
@@ -53,11 +60,12 @@ JCE lets the OpenCL driver allocate computing power progressively, and does not 
 ## Fees
 
 Current fees are:
-* 0.9% on the GPUs
-* 1.5% on the AES CPUs
-* 3.0% on the non-AES CPUs
+* 0.9% for the GPUs
+* 1.5% for the AES CPUs
+* 3.0% for the non-AES CPUs
 
-If you mix CPU and GPU, fees are adjusted proportionally.
+If you mix CPU and GPU, fees are adjusted proportionally.\
+If you mine with GPU only, disable CPU mining with --no-cpu or manually configure zero CPU, rather than pausing your CPU to avoid paying CPU related fees for nothing, and vice-versa.
 
 ## Planned features
 
