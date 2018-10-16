@@ -6,10 +6,14 @@ BitcoinTalk Topic: https://bitcointalk.org/index.php?topic=3281187.0
 :heavy_exclamation_mark: Security Alert! Some hackers pack a Trojan in a fake JCE release, complete with the doc. :heavy_exclamation_mark: That's usually a small .rar when official JCE are big .zip\
 Download JCE only from this Github page.
 
-Here's the GPU prototype version, which still offers the CPU mode, plus an OpenCL GPU mode.
+Here's the GPU version, which still offers the CPU mode, plus an OpenCL GPU mode.
 
 The GPU version being a superset of the CPU version, what applies to JCE CPU also applies to JCE GPU, notably the netcode, the forks or the security concerns, **please take a look at the main documentation here**
 https://github.com/jceminer/cn_cpu_miner
+
+:heavy_exclamation_mark: Update to version 0.33 or later before the V8 fork of 18-October-2018\
+To mine Monero before the fork, add parameter --variation 3, after, use --variation 15\
+Please update **even if you don't mine Monero** since other coins and marketplaces will probably fork too.
 
 :heavy_exclamation_mark: **Monero V8 algo on older AMD cards (HD7000, R7...) has been reported to cause problems at miner initialization. A fix is planned but not avaible yet**
 
@@ -29,7 +33,7 @@ https://github.com/jceminer/cn_cpu_miner
 * Minimum system is Windows 8.1 x64, **Windows 7 is not supported**.
 * No 32-bits version yet
 * No Linux version (possible but unlikely)
-* No support of Intel/nVidia GPU yet
+* No support of nVidia GPU yet
 * APU (even AMD ones) were reported to cause problems
 
 ## Speed
