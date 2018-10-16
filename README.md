@@ -11,6 +11,8 @@ Here's the GPU prototype version, which still offers the CPU mode, plus an OpenC
 The GPU version being a superset of the CPU version, what applies to JCE CPU also applies to JCE GPU, notably the netcode, the forks or the security concerns, **please take a look at the main documentation here**
 https://github.com/jceminer/cn_cpu_miner
 
+:heavy_exclamation_mark: **Monero V8 algo on older AMD cards (HD7000, R7...) has been reported to cause problems at miner initialization. A fix is planned but not avaible yet**
+
 # Index
 
 * [Limitations](#limitations)
