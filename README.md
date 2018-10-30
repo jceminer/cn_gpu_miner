@@ -15,8 +15,7 @@ https://github.com/jceminer/cn_cpu_miner
 To mine Monero before the fork, add parameter --variation 3, after, use --variation 15\
 Please update **even if you don't mine Monero** since other coins and marketplaces will probably fork too.
 
-## Monero V8 algo has been reported to cause problems at miner initialization. A fix is planned but not available yet
-I provide in the 0.33 GPU a very primitive and unoptimized implementation for compatibility and tests, but you may consider it not usable in a real production context. Because of lack of dev time, I won't be able to provide a decent v8 GPU implementation until november, I apologize for such a long delay. However the CPU implementation is optimized and mature.
+## Monero V8 algo is now fixed, please update to version 0.33b2 or later.
 
 # Index
 
@@ -41,7 +40,7 @@ I provide in the 0.33 GPU a very primitive and unoptimized implementation for co
 
 It's hard to compare GPU Miners. There are a lot of external parameters: the card itself, its memory, the biosmod, the drivers, the overclocking, the Power Limit...
 
-However, according to the first feedbacks, here's the status:
+However, according to the first feedbacks, here's the status on CN-v7 (v8 benches yet to come):
 
 * JCE is faster than any other miner on small RX cards (RX550 and RX560). They are my favorite cards, and the ones I use on most of my rigs.
 * JCE is always faster than the Wolf0-based miners (Stak, Xmrig, Gateless...). This is not fair since I can read their code and they cannot read mine, but it's a proof JCE is not a copy-paste of their code.
