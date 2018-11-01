@@ -110,10 +110,10 @@ Here's an example of a complete config with CPUs and GPUs:
 
 "gpu_threads_conf" : 
 [ 
-     { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : 0, "multi_hash":464 },
-     { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : 0, "multi_hash":464 },
-     { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : 1, "multi_hash":208 },
-     { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : 1, "multi_hash":224 },
+     { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : 0, "multi_hash":464 },
+     { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : 0, "multi_hash":464 },
+     { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : 1, "multi_hash":208 },
+     { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : 1, "multi_hash":224 },
 ]
 ```
 
@@ -125,7 +125,7 @@ This is a real-life example from my pretty *exotic and old* rig:
 
 *worksize* : exact same meaning than in other miners, that's the OpenCL parallelism level
 
-*the greeks* : minor tuning values, in order of importance. Good values for alpha are 32, 64 or 128, and for beta 8 or 16. Other values will probably have no real impact, keep 8 or 4.
+*the greeks* : minor tuning values, in order of importance. Good values for alpha are 32, 64 or 128, and for beta 8 or 16.
 
 *index* : the GPU number. Run JCE with parameter `--probe` to get the list. It's in native OpenCL order, and GPU 0 is not always the main boot GPU.
 
@@ -135,80 +135,80 @@ This is a real-life example from my pretty *exotic and old* rig:
 
 * HD7950 (Tahiti 3GB and more) Cryptonight v7
 ```
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":464 },
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":464 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":464 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":464 },
 ```
 Twice the same to use the double-mem mode.
 
 
 * HD7790 (Bonaire 1GB) Cryptonight v7
 ```
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":208 },
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":224 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":208 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":224 },
 ```
 Two threads to use the double-mem mode, but the little 1GB VRAM doesn't allow to use 224+224 so I use 208+224.
 
 * HD7870 or HD7850 (Pitcairn 2GB) Cryptonight v7
 ```
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":464 },
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":464 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":464 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":464 },
 ```
 Twice the same to use the double-mem mode.
 
 * RX560 (Baffin 2GB) Cryptonight v7
 ```
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 128, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":464 },
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 128, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta":4, "index" : ..., "multi_hash":464 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 128, "beta" : 8, "index" : ..., "multi_hash":464 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 128, "beta" : 8, "index" : ..., "multi_hash":464 },
 ```
 Twice the same to use the double-mem mode. If a screen is plugged in the card, you may need to lower to 448 or 432
 
 * RX570 8G Cryptonight v7
 ```
-{ "mode": "GPU", "worksize": 4, "alpha": 128, "beta": 8, "gamma": 4, "delta": 4, "epsilon": 4, "zeta": 4, "index": ..., "multi_hash": 1008 },
-{ "mode": "GPU", "worksize": 4, "alpha": 128, "beta": 8, "gamma": 4, "delta": 4, "epsilon": 4, "zeta": 4, "index": ..., "multi_hash": 1008 },
+{ "mode": "GPU", "worksize": 4, "alpha": 128, "beta": 8, "index": ..., "multi_hash": 1008 },
+{ "mode": "GPU", "worksize": 4, "alpha": 128, "beta": 8, "index": ..., "multi_hash": 1008 },
 ```
 Twice the same to use the double-mem mode.
 
 * RX580 4G Cryptonight v7
 ```
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta" : 4, "index" : ..., "multi_hash": 944},
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta" : 4, "index" : ..., "multi_hash": 944}, 
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash": 944},
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash": 944}, 
 ```
 Twice the same to use the double-mem mode.
 
 * RX580 8G Cryptonight v7
 
 ```
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta" : 4, "index" : ..., "multi_hash":1696 },
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta" : 4, "index" : ..., "multi_hash":1696 }, 
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":1696 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":1696 }, 
 ```
 Twice the same to use the double-mem mode.
 
 * RX580 8G Cryptonight v7
 
 ```
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta" : 4, "index" : ..., "multi_hash":1696 },
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta" : 4, "index" : ..., "multi_hash":1696 }, 
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":1696 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":1696 }, 
 ```
 Twice the same to use the double-mem mode.
 
 * RX580 8G Cryptonight-Heavy/Haven
 
 ```
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta" : 4, "index" : ..., "multi_hash":832 },
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta" : 4, "index" : ..., "multi_hash":832 }, 
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":832 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":832 }, 
 ```
 Twice the same to use the double-mem mode.
 
 * Vega 64 Cryptonight v7
 ```
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 16, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta" : 4, "index" : ..., "multi_hash":1920 },
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 16, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta" : 4, "index" : ..., "multi_hash":1920 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 16, "index" : ..., "multi_hash":1920 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 16, "index" : ..., "multi_hash":1920 },
 ```
 or, alternative
 ```
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta" : 4, "index" : ..., "multi_hash":1936 },
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "gamma" : 4, "delta" : 4, "epsilon" : 4, "zeta" : 4, "index" : ..., "multi_hash":1936 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":1936 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":1936 },
 ```
 Twice the same to use the double-mem mode.
 
