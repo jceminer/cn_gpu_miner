@@ -15,7 +15,9 @@ https://github.com/jceminer/cn_cpu_miner
 To mine Monero before the fork, add parameter --variation 3, after, use --variation 15\
 Please update **even if you don't mine Monero** since other coins and marketplaces will probably fork too.
 
-## Monero V8 algo is now fixed, please update to version 0.33b2 or later.
+## The 0.33b4 is the first version with decent performance on Cryptonight-V8, please update from previous versions
+
+#### Breaking change: starting with version 0.33, Intel GPUs (including the IGP) are detected, which may invalidate your previous configurations.
 
 # Index
 
@@ -40,7 +42,7 @@ Please update **even if you don't mine Monero** since other coins and marketplac
 
 It's hard to compare GPU Miners. There are a lot of external parameters: the card itself, its memory, the biosmod, the drivers, the overclocking, the Power Limit...
 
-However, according to the first feedbacks, here's the status on CN-v7 (v8 benches yet to come):
+However, according to the first feedbacks, here's the status on CN-v7:
 
 * JCE is faster than any other miner on small RX cards (RX550 and RX560). They are my favorite cards, and the ones I use on most of my rigs.
 * JCE is always faster than the Wolf0-based miners (Stak, Xmrig, Gateless...). This is not fair since I can read their code and they cannot read mine, but it's a proof JCE is not a copy-paste of their code.
@@ -49,6 +51,13 @@ However, according to the first feedbacks, here's the status on CN-v7 (v8 benche
 * JCE is disappointing on CN-Heavy, but that's the code I optimized the less so far.
 * I got mixed results on HD7800. I measured higher hashrate than other miners on my rig, but got opposite comments from some users. To be tested.
 * JCE is bad on small 1G cards compared to the legendary Claymore 9.7, but this miner is no longer supported.
+
+And on CN-v8:
+
+* Still always better than the open-source miners (Stak, Xmrig, Gateless...).
+* Claymore is just no longer compatible.
+* JCE is the best on older cards like HD6000 and HD7000.
+* RX560 cards reach 500+, RX570/580 cards reach 1000+
 
 The CPU part of JCE-GPU is the exact same than the CPU-only version.
 
