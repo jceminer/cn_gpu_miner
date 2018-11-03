@@ -64,7 +64,8 @@ The CPU part of JCE-GPU is the exact same than the CPU-only version.
 ## Drivers
 
 Recommended drivers:
-* 15.12 for HD6xxx and HD79xx
+* 14.4 for HD6xxx
+* 15.12 for HD79xx
 * 18.6.1 otherwise
 
 ## Warming-up
@@ -193,6 +194,7 @@ Twice the same to use the double-mem mode.
 ```
 Twice the same to use the double-mem mode.
 
+
 * RX580 8G Cryptonight v7
 
 ```
@@ -244,3 +246,6 @@ And again, keep in mind that JCE speed grows progressively from ~80% to 100% for
 #### Q. My pool reports a hashrate lower than the one displayed
 First, press R to get JCE report about effective hashrate. If it's lower, that's just because of back luck, mining is a random game. If it's close to the theoretical value, the loss should be about 2%, 0.9% for fees and ~1% of stale shares. If you observe a huge difference between JCE reported effective hashrate and the pool hashrate, so the pool may be cheating you.\
 Nicehash, which have a specific network protocol, tend to refuse a lot more stale shares than other pools, leading to a lower effective hashrate. In doubt, please test on a normal and reliable pool: a non-free non-marketplace pool with a normal difficulty level.
+
+#### Q. I get error D:\qb\workspace\19992\src\vpg-compute-neo\runtime\os_interface\windows\wddm.cpp
+Intel GPUs are now enabled among AMD GPUs, ensure you're not applying a previous AMD configuration to an Intel GPU
