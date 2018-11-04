@@ -48,7 +48,6 @@ However, according to the first feedbacks, here's the status on CN-v7:
 * JCE is always faster than the Wolf0-based miners (Stak, Xmrig, Gateless...). This is not fair since I can read their code and they cannot read mine, but it's a proof JCE is not a copy-paste of their code.
 * JCE is surprisingly fast on Vega, reaching 2050+ on Vega 64 on CN-v7.
 * JCE is close to SRB and Claymore otherwise, sometimes slightly above, sometimes slightly below.
-* JCE is disappointing on CN-Heavy, but that's the code I optimized the less so far.
 * I got mixed results on HD7800. I measured higher hashrate than other miners on my rig, but got opposite comments from some users. To be tested.
 * JCE is bad on small 1G cards compared to the legendary Claymore 9.7, but this miner is no longer supported.
 
@@ -77,6 +76,7 @@ JCE lets the OpenCL driver allocate computing power progressively, and does not 
 
 Current fees are:
 * 0.9% for the GPUs
+* 2.1% for the GPUs on CN-Heavy/HVX/Tube
 * 1.5% for the AES CPUs
 * 3.0% for the non-AES CPUs
 
@@ -92,7 +92,7 @@ JCE GPU is still in very early stage. Here are the planned features to be added:
 * Watchdog _Done!_
 * Keep-alive _Done!_
 * Per-GPU pause _Done!_
-* Decent performance in Heavy/Haven
+* Decent performance in Heavy/Haven _Done!_
 * Bittube-v2 fork support _Done!_
 * APU support
 * Faster and/or cached OpenCL compile _Done!_
