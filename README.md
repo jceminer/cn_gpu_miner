@@ -15,7 +15,8 @@ https://github.com/jceminer/cn_cpu_miner
 To mine Monero before the fork, add parameter --variation 3, after, use --variation 15\
 Please update **even if you don't mine Monero** since other coins and marketplaces will probably fork too.
 
-## The 0.33b4 is the first version with decent performance on Cryptonight-V8, please update from previous versions
+## The 0.33b4 is the first version with decent performance on Cryptonight-V8, please update from previous versions.
+## Ditto about the 0.33b5 and CN-Heavy/HVX/Tube, if you mine one of these algos, please update.
 
 #### Breaking change: starting with version 0.33, Intel GPUs (including the IGP) are detected, which may invalidate your previous configurations.
 
