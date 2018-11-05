@@ -52,12 +52,19 @@ However, according to the first feedbacks, here's the status on CN-v7:
 * I got mixed results on HD7800. I measured higher hashrate than other miners on my rig, but got opposite comments from some users. To be tested.
 * JCE is bad on small 1G cards compared to the legendary Claymore 9.7, but this miner is no longer supported.
 
-And on CN-v8:
+On CN-v8:
 
 * Still always better than the open-source miners (Stak, Xmrig, Gateless...).
 * Claymore is just no longer compatible.
 * JCE is the best on older cards like HD6000 and HD7000.
 * RX560 cards reach 500+, RX570/580 cards reach 1000+
+
+On CN-Heavy/HVX/Tube:
+
+* JCE is simply the fastest on all AMD cards, by a factor of +20%
+* 1750+ on Vega56
+* 400+ on HD7850
+* 440+ on HD7950
 
 The CPU part of JCE-GPU is the exact same than the CPU-only version.
 
@@ -76,8 +83,8 @@ JCE lets the OpenCL driver allocate computing power progressively, and does not 
 ## Fees
 
 Current fees are:
-* 0.9% for the GPUs
 * 2.1% for the GPUs on CN-Heavy/HVX/Tube
+* 0.9% for the GPUs otherwise
 * 1.5% for the AES CPUs
 * 3.0% for the non-AES CPUs
 
@@ -111,16 +118,16 @@ The auto GPU config aims for safety and will probably be a decent but suboptimal
 Here's an example of a complete config with CPUs and GPUs:
 
 ```
-"cpu_threads_conf" : 
-[ 
+"cpu_threads_conf" :
+[
      { "cpu_architecture" : "auto", "affine_to_cpu" : 0, "use_cache" : true, "multi_hash":1 },
      { "cpu_architecture" : "auto", "affine_to_cpu" : 1, "use_cache" : true, "multi_hash":1 },
      { "cpu_architecture" : "auto", "affine_to_cpu" : 2, "use_cache" : true, "multi_hash":1 },
      { "cpu_architecture" : "auto", "affine_to_cpu" : 3, "use_cache" : true, "multi_hash":1 },
 ],
 
-"gpu_threads_conf" : 
-[ 
+"gpu_threads_conf" :
+[
      { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : 0, "multi_hash":464 },
      { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : 0, "multi_hash":464 },
      { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : 1, "multi_hash":208 },
@@ -183,7 +190,7 @@ Twice the same to use the double-mem mode.
 * RX580 4G Cryptonight v7
 ```
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash": 944},
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash": 944}, 
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash": 944},
 ```
 Twice the same to use the double-mem mode.
 
@@ -191,7 +198,7 @@ Twice the same to use the double-mem mode.
 
 ```
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":1696 },
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":1696 }, 
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":1696 },
 ```
 Twice the same to use the double-mem mode.
 
@@ -200,7 +207,7 @@ Twice the same to use the double-mem mode.
 
 ```
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":1696 },
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":1696 }, 
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":1696 },
 ```
 Twice the same to use the double-mem mode.
 
@@ -208,7 +215,7 @@ Twice the same to use the double-mem mode.
 
 ```
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":832 },
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":832 }, 
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":832 },
 ```
 Twice the same to use the double-mem mode.
 
