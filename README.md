@@ -63,6 +63,7 @@ On CN-Heavy/HVX/Tube:
 
 * JCE is simply the fastest on all AMD cards, by a factor of +20%
 * 1750+ on Vega56
+* 1010+ on RX570/580
 * 400+ on HD7850
 * 440+ on HD7950
 
@@ -136,7 +137,7 @@ Here's an example of a complete config with CPUs and GPUs:
 ```
 
 This is a real-life example from my pretty *exotic and old* rig:
-* The CPU part is the exact same as in JCE CPU. I used a Core2-quad so i simply write the four normal threads.
+* The CPU part is the exact same as in JCE CPU. I used a Core2-Quad so i simply write the four normal threads.
 * The GPU part is new:
 
 *mode* : can be GPU and APU, but APU is not available yet, so keep GPU
@@ -195,31 +196,34 @@ Twice the same to use the double-mem mode.
 Twice the same to use the double-mem mode.
 
 * RX580 8G Cryptonight v7
-
 ```
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":1696 },
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":1696 },
 ```
 Twice the same to use the double-mem mode.
-
 
 * RX580 8G Cryptonight v7
-
 ```
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":1696 },
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":1696 },
 ```
 Twice the same to use the double-mem mode.
 
-* RX580 8G Cryptonight-Heavy/Haven
+* Vega56 Cryptonight-Heavy/Haven/Tube
+```
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":896 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":896 },
+```
+Twice the same to use the double-mem mode.
 
+* RX580 8G Cryptonight-Heavy/Haven/Tube
 ```
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":832 },
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":832 },
 ```
 Twice the same to use the double-mem mode.
 
-* Vega 64 Cryptonight v7
+* Vega64 Cryptonight v7
 ```
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 16, "index" : ..., "multi_hash":1920 },
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 16, "index" : ..., "multi_hash":1920 },
