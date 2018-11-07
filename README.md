@@ -56,14 +56,15 @@ On CN-v8:
 
 * Still always better than the open-source miners (Stak, Xmrig, Gateless...).
 * Claymore is just no longer compatible.
-* JCE is the best on older cards like HD6000 and HD7000.
-* RX560 cards reach 500+, RX570/580 cards reach 1000+
+* JCE is the best on older cards like HD6000 and HD7000 and R7/R9 series
+* RX560 cards reach 500+, 850+ on R9 290/X, RX570/580 cards reach 1000+
 
 On CN-Heavy/HVX/Tube:
 
 * JCE is simply the fastest on all AMD cards, by a factor of +20%
 * 1750+ on Vega56
 * 1010+ on RX570/580
+* 650+ on R9 290X
 * 400+ on HD7850
 * 440+ on HD7950
 
@@ -84,7 +85,7 @@ JCE lets the OpenCL driver allocate computing power progressively, and does not 
 ## Fees
 
 Current fees are:
-* 2.1% for the GPUs on CN-Heavy/HVX/Tube
+* 2.3% for the GPUs on CN-Heavy/HVX/Tube
 * 0.9% for the GPUs otherwise
 * 1.5% for the AES CPUs
 * 3.0% for the non-AES CPUs
@@ -159,7 +160,6 @@ This is a real-life example from my pretty *exotic and old* rig:
 ```
 Twice the same to use the double-mem mode.
 
-
 * HD7790 (Bonaire 1GB) Cryptonight v7
 ```
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":208 },
@@ -171,6 +171,20 @@ Two threads to use the double-mem mode, but the little 1GB VRAM doesn't allow to
 ```
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":464 },
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":464 },
+```
+Twice the same to use the double-mem mode.
+
+* R9 290X (Hawaii 4GB) CryptonightHeavy
+```
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 256, "beta" : 8, "index" : ..., "multi_hash":448 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 256, "beta" : 8, "index" : ..., "multi_hash":448 },
+```
+Twice the same to use the double-mem mode.
+
+* R9 290X (Hawaii 4GB) Cryptonight v8
+```
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 256, "beta" : 8, "index" : ..., "multi_hash":800 },
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 256, "beta" : 8, "index" : ..., "multi_hash":800 },
 ```
 Twice the same to use the double-mem mode.
 
