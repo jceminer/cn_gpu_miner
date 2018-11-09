@@ -256,7 +256,8 @@ If it's an APU or a nVidia card, they are not supported yet.\
 On Windows 7 you will probably have no GPU detected at all. Windows 7 is not supported.
 
 #### Q. The OpenCL compilation fails
-nVidia OpenCL driver and cards older than the HD7000 may cause such an error. They are not supported yet.
+nVidia OpenCL driver and cards older than the HD6000 may cause such an error. They are not supported yet.\
+The _0.2.10_ error is fixed starting from 0.33b6
 
 #### Q. My hashrate is zero or almost zero
 Lower the parameters, and focus first on the multi_hash.
