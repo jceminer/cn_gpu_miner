@@ -85,7 +85,7 @@ JCE lets the OpenCL driver allocate computing power progressively, and does not 
 ## Fees
 
 Current fees are:
-* 2.3% for the GPUs on CN-Heavy/HVX/Tube
+* 2.1% for the GPUs on CN-Heavy/HVX/Tube
 * 0.9% for the GPUs otherwise
 * 1.5% for the AES CPUs
 * 3.0% for the non-AES CPUs
@@ -95,7 +95,7 @@ If you mine with GPU only, disable CPU mining with --no-cpu or manually configur
 
 ## Planned features
 
-JCE GPU is still in very early stage. Here are the planned features to be added:
+JCE GPU is still incomplete. Here are the planned features to be added:
 * GPU auto-config _Done!_
 * Separate per-GPU pools and coins (to let the CPU and each GPU mine its own coin if desired)
 * Temperature and fan speed monitoring _Done!_
