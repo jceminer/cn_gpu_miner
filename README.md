@@ -174,20 +174,6 @@ Two threads to use the double-mem mode, but the little 1GB VRAM doesn't allow to
 ```
 Twice the same to use the double-mem mode.
 
-* R9 290X (Hawaii 4GB) CryptonightHeavy
-```
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 256, "beta" : 8, "index" : ..., "multi_hash":448 },
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 256, "beta" : 8, "index" : ..., "multi_hash":448 },
-```
-Twice the same to use the double-mem mode.
-
-* R9 290X (Hawaii 4GB) Cryptonight v8
-```
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 256, "beta" : 8, "index" : ..., "multi_hash":800 },
-{ "mode" : "GPU", "worksize" : 8, "alpha" : 256, "beta" : 8, "index" : ..., "multi_hash":800 },
-```
-Twice the same to use the double-mem mode.
-
 * RX560 (Baffin 2GB) Cryptonight v7
 ```
 { "mode" : "GPU", "worksize" : 8, "alpha" : 128, "beta" : 8, "index" : ..., "multi_hash":464 },
