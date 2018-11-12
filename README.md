@@ -174,6 +174,13 @@ Two threads to use the double-mem mode, but the little 1GB VRAM doesn't allow to
 ```
 Twice the same to use the double-mem mode.
 
+* RX550 2GB Cryptonight v8
+```
+{ "mode" : "GPU", "worksize" : 16, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":432 }, 
+{ "mode" : "GPU", "worksize" : 16, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":432 }, 
+```
+Twice the same to use the double-mem mode. Also try with worksize=8.
+
 * RX560 (Baffin 2GB) Cryptonight v7
 ```
 { "mode" : "GPU", "worksize" : 8, "alpha" : 128, "beta" : 8, "index" : ..., "multi_hash":464 },
