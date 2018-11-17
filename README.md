@@ -61,12 +61,12 @@ On CN-v8:
 
 On CN-Heavy/HVX/Tube:
 
-* JCE is simply the fastest on all AMD cards, by a factor of +20%
+* JCE is a lot faster than the open-source miners (Stak, Xmrig, Gateless...) by a factor of +20%
 * 1750+ on Vega56
 * 1010+ on RX570/580
 * 650+ on R9 290X
-* 400+ on HD7850
-* 440+ on HD7950
+* 400+ on HD7850 2G
+* 425+ on HD7950 3G
 
 The CPU part of JCE-GPU is the exact same than the CPU-only version.
 
@@ -160,6 +160,12 @@ This is a real-life example from my pretty *exotic and old* rig:
 ```
 Twice the same to use the double-mem mode.
 
+* HD7950 (Tahiti 3GB and more) Cryptonight-Heavy/Haven/Tube
+```
+{ "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":656 },
+```
+Double-mem should be avoided here
+
 * HD7790 (Bonaire 1GB) Cryptonight v7
 ```
 { "mode" : "GPU", "worksize" : 8, "alpha" : 64, "beta" : 8, "index" : ..., "multi_hash":208 },
@@ -250,7 +256,8 @@ On Windows 7 you will probably have no GPU detected at all. Windows 7 is not sup
 
 #### Q. The OpenCL compilation fails
 nVidia OpenCL driver and cards older than the HD6000 may cause such an error. They are not supported yet.\
-The _0.2.10_ error is fixed starting from 0.33b6
+The _0.2.10_ error is partially fixed starting from 0.33b6\
+Also better use only english characters in the path where you install JCE, russian and other non-ascii characters can cause such a problem.
 
 #### Q. My hashrate is zero or almost zero
 Lower the parameters, and focus first on the multi_hash.
@@ -269,3 +276,6 @@ Nicehash, which have a specific network protocol, tend to refuse a lot more stal
 
 #### Q. I get error D:\qb\workspace\19992\src\vpg-compute-neo\runtime\os_interface\windows\wddm.cpp
 Intel GPUs are now enabled among AMD GPUs, ensure you're not applying a previous AMD configuration to an Intel GPU
+
+#### Q. I get error Abort was called at ... line in file ...
+Another symptom of a bad (or unwanted) Intel GPU/IGP configuration, see above.
