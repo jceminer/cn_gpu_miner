@@ -61,9 +61,9 @@ On CN-v8:
 
 On CN-Heavy/HVX/Tube:
 
-* JCE is a lot faster than the open-source miners (Stak, Xmrig, Gateless...) by a factor of +20%
+* JCE is faster than the open-source miners on most cards:
 * 1750+ on Vega56
-* 1010+ on RX570/580
+* 1025+ on RX570/580
 * 650+ on R9 290X
 * 400+ on HD7850 2G
 * 425+ on HD7950 3G
@@ -85,8 +85,7 @@ JCE lets the OpenCL driver allocate computing power progressively, and does not 
 ## Fees
 
 Current fees are:
-* 2.1% for the GPUs on CN-Heavy/HVX/Tube
-* 0.9% for the GPUs otherwise
+* 0.9% for the GPUs
 * 1.5% for the AES CPUs
 * 3.0% for the non-AES CPUs
 
