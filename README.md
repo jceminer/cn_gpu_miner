@@ -58,14 +58,15 @@ On CN-v8:
 * Claymore is just no longer compatible.
 * JCE is the best on older cards like HD6000 and HD7000 and R7/R9 series
 * RX560 cards reach 500+, 850+ on R9 290/X, RX570/580 cards reach 1000+
+* 420+ on HD7850 2G
+* 480+ on HD7950 3G
 
 On CN-Heavy/HVX/Tube:
 
 * JCE is faster than the open-source miners on most cards:
 * 1750+ on Vega56
 * 1025+ on RX570/580
-* 650+ on R9 290X
-* 400+ on HD7850 2G
+* 330+ on HD7870 2G
 * 425+ on HD7950 3G
 
 The CPU part of JCE-GPU is the exact same than the CPU-only version.
