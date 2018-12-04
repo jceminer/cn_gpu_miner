@@ -15,8 +15,7 @@ https://github.com/jceminer/cn_cpu_miner
 To mine Monero before the fork, add parameter --variation 3, after, use --variation 15\
 Please update **even if you don't mine Monero** since other coins and marketplaces will probably fork too.
 
-## The 0.33b4 is the first version with decent performance on Cryptonight-V8, please update from previous versions.
-## Ditto about the 0.33b5 and CN-Heavy/HVX/Tube, if you mine one of these algos, please update.
+## The 0.33b8 offers a speed increase in most cases and a more stable hashrate, you're advised to upgrade even if you didn't experience problems on older versions.
 
 #### Breaking change: starting with version 0.33, Intel GPUs (including the IGP) are detected, which may invalidate your previous configurations.
 
@@ -65,7 +64,8 @@ On CN-Heavy/HVX/Tube:
 
 * JCE is faster than the open-source miners on most cards:
 * 1750+ on Vega56
-* 1025+ on RX570/580
+* 1025+ on RX570/580 4G
+* 1200+ on RX580 8G
 * 330+ on HD7870 2G
 * 425+ on HD7950 3G
 
