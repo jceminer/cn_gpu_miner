@@ -15,7 +15,7 @@ https://github.com/jceminer/cn_cpu_miner
 To mine Monero before the fork, add parameter --variation 3, after, use --variation 15\
 Please update **even if you don't mine Monero** since other coins and marketplaces will probably fork too.
 
-## The 0.33b8 offers a speed increase in most cases and a more stable hashrate, you're advised to upgrade even if you didn't experience problems on older versions.
+## The 0.33b8 and later offers a speed increase in most cases and a more stable hashrate, you're advised to upgrade even if you didn't experience problems on older versions. The 0.33b11 is recommended.
 
 #### Breaking change: starting with version 0.33, Intel GPUs (including the IGP) are detected, which may invalidate your previous configurations.
 
@@ -74,7 +74,7 @@ The CPU part of JCE-GPU is the exact same than the CPU-only version.
 ## Drivers
 
 Recommended drivers:
-* 14.4 for HD6xxx
+* 14.4 on Windows 8.1 for HD6xxx
 * 15.12 for HD79xx
 * 18.6.1 otherwise
 
