@@ -15,7 +15,7 @@ https://github.com/jceminer/cn_cpu_miner
 To mine Monero before the fork, add parameter --variation 3, after, use --variation 15\
 Please update **even if you don't mine Monero** since other coins and marketplaces will probably fork too.
 
-## The 0.33b8 and later offers a speed increase in most cases and a more stable hashrate, you're advised to upgrade even if you didn't experience problems on older versions. The 0.33b11 is recommended.
+## The 0.33b8 and later offers a speed increase in most cases and a more stable hashrate, you're advised to upgrade even if you didn't experience problems on older versions. The 0.33b11+ is recommended.
 
 #### Breaking change: starting with version 0.33, Intel GPUs (including the IGP) are detected, which may invalidate your previous configurations.
 
@@ -81,7 +81,7 @@ Recommended drivers:
 ## Warming-up
 
 JCE lets the OpenCL driver allocate computing power progressively, and does not push the card at max immediately.\
-**It starts at ~80% speed and grows up to 100% in about 5 minutes.** So let the miner warm up before comparing its speed to other miners.
+**It starts at ~80% speed and grows up to 100% in about 1 minute.** So let the miner warm up before comparing its speed to other miners.
 
 ## Fees
 
@@ -147,7 +147,7 @@ This is a real-life example from my pretty *exotic and old* rig:
 
 *the greeks* : minor tuning values, in order of importance. Good values for alpha are 32, 64 or 128, and for beta 8 or 16.
 
-*index* : the GPU number. Run JCE with parameter `--probe` to get the list. It's in native OpenCL order, and GPU 0 is not always the main boot GPU.
+*index* : the GPU number. Run JCE with parameter `--probe` to get the list. It's in native OpenCL order, and GPU 0 is not always the main boot GPU, and may be an IGP if you have one.
 
 *multi_hash* : often called intensity by other miners. Claymore parameter for it was `-h`. Like for CPU, that's the number of hashes computed at the same time. While CPUs go from 1 to 6, GPUs go much higher. Often the higher the faster, but not that simple. Must be a multiple of 16.
 
@@ -260,7 +260,8 @@ The _0.2.10_ error is partially fixed starting from 0.33b6\
 Also better use only english characters in the path where you install JCE, russian and other non-ascii characters can cause such a problem.
 
 #### Q. My hashrate is zero or almost zero
-Lower the parameters, and focus first on the multi_hash.
+Lower the parameters, and focus first on the multi_hash.\
+In JCE Miner, the integrated GPU/IGP, even if it's an Intel one, even if embedded in the CPU, is often GPU0. If you experience a zero or very low hashrate on GPU0, ensure you're not mistakenly mining on your IGP. To fix, use a manual configuration and number your GPUs starting from 1.
 
 #### Q. My hashrate starts good then drops to zero or almost zero
 Lower the parameters, focus first on the multi_hash, or unplug any screen (real or virtual) from the card.
