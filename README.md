@@ -11,10 +11,6 @@ Here's the GPU version, which still offers the CPU mode, plus an OpenCL GPU mode
 The GPU version being a superset of the CPU version, what applies to JCE CPU also applies to JCE GPU, notably the netcode, the forks or the security concerns, **please take a look at the main documentation here**
 https://github.com/jceminer/cn_cpu_miner
 
-:heavy_exclamation_mark: Update to version 0.33 or later before the V8 fork of 18-October-2018\
-To mine Monero before the fork, add parameter --variation 3, after, use --variation 15\
-Please update **even if you don't mine Monero** since other coins and marketplaces will probably fork too.
-
 ## The 0.33b8 and later offers a speed increase in most cases and a more stable hashrate, you're advised to upgrade even if you didn't experience problems on older versions. The 0.33b11+ is recommended.
 
 #### Breaking change: starting with version 0.33, Intel GPUs (including the IGP) are detected, which may invalidate your previous configurations.
