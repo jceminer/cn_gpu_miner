@@ -33,10 +33,11 @@ Please update **even if you don't mine Monero** since other coins and marketplac
 ## Limitations
 
 * Minimum system is Windows 8.1 x64, **Windows 7 is not supported**.
-* No 32-bits version yet
-* No Linux version (possible but unlikely)
-* No support of nVidia GPU yet
+* No 32-bits version
+* No Linux version
+* No support of nVidia GPU
 * APU (even AMD ones) were reported to cause problems
+* Limited support of Intel IGP/GPU
 
 ## Speed
 
@@ -269,7 +270,7 @@ Lower the parameters, focus first on the multi_hash, or unplug any screen (real 
 #### Q. My hashrate is a lot lower than other miner X
 The performance difference between JCE and other miners, may it be positive or negative, is rarely more than ~10%, and often closer to 5%. A huge difference is caused by a bad configuration. And a good configuration on miner X may be bad on JCE, and vice-versa.\
 A notable exception is JCE against Claymore on 512M and 1G cards, where Claymore is an order of magnitude faster. JCE has been developed in 2018 and badly support old low-memory cards. But on 2G+ cards JCE is often faster.\
-And again, keep in mind that JCE speed grows progressively from ~80% to 100% for 5min, so wait a bit before concluding JCE is slower.
+And again, keep in mind that JCE speed grows progressively from ~80% to 100% for 1min, so wait a bit before concluding JCE is slower.
 
 #### Q. My pool reports a hashrate lower than the one displayed
 First, press R to get JCE report about effective hashrate. If it's lower, that's just because of back luck, mining is a random game. If it's close to the theoretical value, the loss should be about 2%, 0.9% for fees and ~1% of stale shares. If you observe a huge difference between JCE reported effective hashrate and the pool hashrate, so the pool may be cheating you.\
